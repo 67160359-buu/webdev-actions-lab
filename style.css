@@ -6,65 +6,111 @@ body {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, #e9e2ff 0%, #d6e6ff 50%, #ffe3f1 100%);
-  color: #2d2a4a;
+  color: #f3e9ff;
+  background:
+    radial-gradient(circle at 80% 15%, #ffd479 0 40px, #ffb347 41px 44px, transparent 45px),
+    radial-gradient(circle at 50% 120%, #4b1d6e 0%, #1a0b2e 55%, #0b0414 100%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* ค้างคาวและฟักทองลอยอยู่มุมจอ */
+body::before {
+  content: "🦇   🦇      🦇";
+  position: fixed;
+  top: 6%;
+  left: 5%;
+  font-size: 2rem;
+  letter-spacing: 12px;
+  animation: float 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+body::after {
+  content: "🕸️";
+  position: fixed;
+  top: 0;
+  right: 0;
+  font-size: 5rem;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
+  position: relative;
+  background: rgba(30, 14, 52, 0.88);
   padding: 48px 56px;
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 20px 50px rgba(110, 80, 200, 0.18);
+  border: 2px solid #ff7518;
+  box-shadow:
+    0 0 30px rgba(255, 117, 24, 0.35),
+    0 20px 50px rgba(0, 0, 0, 0.6);
   text-align: center;
   max-width: 480px;
   width: calc(100% - 32px);
-  animation: fadeUp 0.6s ease both;
+  animation: fadeUp 0.7s ease both;
+}
+
+.card::before {
+  content: "🎃";
+  display: block;
+  font-size: 3.2rem;
+  margin-bottom: 8px;
+  animation: wobble 2.5s ease-in-out infinite;
 }
 
 h1 {
   margin: 0 0 12px;
   font-size: 2rem;
-  background: linear-gradient(90deg, #7c5cdb, #e56bb0);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #ff9f40;
+  text-shadow: 0 0 14px rgba(255, 117, 24, 0.7);
 }
 
-p { margin: 8px 0; color: #5d5a7a; }
+p { margin: 8px 0; color: #cdb8e8; }
 
 #status {
   display: inline-block;
   margin: 18px 0 24px;
   padding: 8px 18px;
   border-radius: 999px;
-  background: #f1ecff;
-  color: #6a4fc9;
+  background: #2f1650;
+  border: 1px dashed #a6ff5c;
+  color: #a6ff5c;
   font-weight: 600;
+  text-shadow: 0 0 8px rgba(166, 255, 92, 0.6);
 }
 
 button {
-  background: linear-gradient(135deg, #ae93eb, #7c5cdb);
-  color: white;
+  background: linear-gradient(135deg, #ff9f40, #ff5e00);
+  color: #1a0b2e;
   border: 0;
   padding: 14px 32px;
   border-radius: 12px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(124, 92, 219, 0.35);
+  box-shadow: 0 8px 22px rgba(255, 94, 0, 0.5);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 26px rgba(124, 92, 219, 0.45);
+  transform: translateY(-3px) rotate(-1.5deg);
+  box-shadow: 0 12px 30px rgba(255, 94, 0, 0.75);
 }
 
 button:active { transform: translateY(0); }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
+}
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(-6deg); }
+  50%      { transform: rotate(6deg); }
 }
