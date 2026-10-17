@@ -7,12 +7,41 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="card">
-    <h1>My Web Development Lab-359</h1>
-    <p>ชื่อ: เพ็ญนภา เป็นเชื้อสาย │ รหัสนิสิต: 67160359</p>
-    <p id="status">Ready to deploy</p>
-    <button id="helloBtn">Say Hello</button>
-  </main>
+  <div class="container">
+
+    <header class="card hero">
+      <h1>My Web Development Lab</h1>
+      <p>ชื่อ: เพ็ญนภา เป็นเชื้อสาย │ รหัสนิสิต: 67160359</p> <!-- ← แก้ -->
+      <p id="status">Ready to deploy</p>
+      <div class="btn-row">
+        <button id="helloBtn">Say Hello</button>
+        <button id="themeBtn" class="ghost">Toggle Theme</button>
+      </div>
+    </header>
+
+    <section class="card" id="about">
+      <h2>About Me</h2>
+      <p>สวัสดีครับ/ค่ะ ฉันชื่อ การ์ตูน เป็นนิสิตที่กำลังเรียนรู้การพัฒนาเว็บไซต์ ชอบสร้างสิ่งใหม่ และสนใจเรื่อง AI</p> <!-- ← แก้ -->
+    </section>
+
+    <section class="card" id="skills">
+      <h2>Skills</h2>
+      <ul class="chips">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Git &amp; GitHub</li>
+        <li>GitHub Actions</li>
+      </ul>
+    </section>
+
+    <section class="card" id="contact">
+      <h2>Contact</h2>
+      <p><a href="mailto:your@email.com">your@email.com</a></p> <!-- ← แก้ -->
+      <p><a href="https://github.com/67160359-buu" target="_blank" rel="noopener">github.com/67160359-buu</a></p>
+    </section>
+
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
